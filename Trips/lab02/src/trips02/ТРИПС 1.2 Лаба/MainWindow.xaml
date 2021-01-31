@@ -1,0 +1,56 @@
+﻿<Window x:Class="ТРИПС_1._2_Лаба.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+    Title="Диспетчеры компоновки" Height="450" Width="900">
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="43*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,0,-0.4,35">
+            <Label Content="Последние документы"/>
+            <Button Content="Открыть"/>
+            <Button Content="Сохранить"/>
+            <Button Content="Закрыть"/>
+            <Button Content="Обработать"/>
+            <Button Content="О программе"/>
+        </StackPanel>
+
+        <StackPanel Margin="0,70,0,0.8" Orientation="Vertical" Grid.RowSpan="2">
+            <Label Content="1.txt"/>
+            <Label Content="2.txt"/>
+            <Label Content="3.txt"/>
+            <Label Content="4.txt"/>
+            <Label Content="5.txt"/>
+            <Label Content="6.txt"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Top" Grid.RowSpan="2" Height="380" Margin="0,40,-0.4,0" Grid.ColumnSpan="2">
+            <Label FontWeight="Black" Content="1.txt"/>
+            <Label Content="2.txt"/>
+            <Label Content="3.txt"/>
+        </StackPanel>
+
+        <WrapPanel Grid.Column="1" Grid.ColumnSpan="2" Margin="0,70,-0.4,-0.2" Grid.RowSpan="2">
+            <Button Width="110" Height="120" Background="Yellow" Content="A" BorderThickness="10" BorderBrush="White"/>
+            <Button Width="110" Height="120" Background="Red" Content="B" BorderThickness="10" BorderBrush="White"/>
+            <Button Width="110" Height="120" Background="Green" Content="C" BorderThickness="10" BorderBrush="White"/>
+            <Button Width="110" Height="120" Background="Blue" Content="D" BorderThickness="10" BorderBrush="White"/>
+            <Button Width="110" Height="120" Background="Gray" Content="E" BorderThickness="10" BorderBrush="White"/>
+            <Button Width="110" Height="120" Background="#FFEAE3A5" Content="F" BorderThickness="10" BorderBrush="White"/>
+        </WrapPanel>
+
+    </Grid>
+</Window>

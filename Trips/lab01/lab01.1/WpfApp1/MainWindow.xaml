@@ -1,0 +1,60 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+
+        <ToolBarTray Margin="0,29.267,0,341.265" >
+            <ToolBar Margin="0,6.401,-64,10.81" HorizontalAlignment="Left" Width="243.147">
+                <Button x:Name="Gr" Click="Color" MouseEnter="Green_info" MouseLeave="Clear_info">
+                    <Image Source="/Resources/green.png" Height="25" Width="25" />
+                </Button>
+                <Button x:Name="Bl" Click="Color" MouseEnter="Blue_info" MouseLeave="Clear_info">
+                    <Image Source="/Resources/blue.png" Height="25" Width="25" />
+                </Button>
+                <Button x:Name="Ye" Click="Color" MouseEnter="Yellow_info" MouseLeave="Clear_info">
+                    <Image Source="/Resources/yellow.png" Height="25" Width="25" />
+                </Button>
+                <Button x:Name="Pu" Click="Color" MouseEnter="Purple_info" MouseLeave="Clear_info">
+                    <Image Source="/Resources/Purple.png" Height="25" Width="25" />
+                </Button>
+                <Button x:Name="Wh" Click="Color" MouseEnter="White_info" MouseLeave="Clear_info">
+                    <Image Source="/Resources/White.png" Height="25" Width="25" />
+                </Button>
+                <Button Click="Info_Developer" MouseEnter="Dev_info" MouseLeave="Clear_info">
+                    <Image Source="/Resources/info.png" Width="25" />
+                </Button>
+                <Button Click="Esc_Click" MouseEnter="Esc_info" MouseLeave="Clear_info">
+                    <Image Source="/Resources/cancel.png" Width="25" Height="25"/>
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+
+        <Menu Background="White" BorderThickness="1" Margin="-1.333,-4.833,-1,379.533">
+            <MenuItem Header="_Цвет фона окна" MouseEnter="Color_info" >
+                <MenuItem x:Name="Gre" Header="Зелёный" Height="31.4" Click="Color" MouseEnter="Green_info" MouseLeave="Clear_info"/>
+                <MenuItem x:Name="Blu" Header="Синий" Height="24" Click="Color" MouseEnter="Blue_info" MouseLeave="Clear_info"/>
+                <MenuItem x:Name="Yel" Header="Жёлтый" Height="25" Click="Color" MouseEnter="Yellow_info" MouseLeave="Clear_info"/>
+                <MenuItem x:Name="Pur" Header="Фиолетовый" Height="25" Click="Color" MouseEnter="Purple_info" MouseLeave="Clear_info"/>
+                <MenuItem x:Name="Whi" Header="Белый" Height="25" Click="Color" MouseEnter="White_info" MouseLeave="Clear_info"/>
+            </MenuItem>
+            <Separator Width="4" />
+            <MenuItem Header="_О разработчике" Click="Info_Developer" MouseEnter="Dev_info" MouseLeave="Clear_info"/>
+            <Separator Width="4" />
+            <MenuItem Header="_Закрыть" Click="Esc_Click" MouseEnter="Esc_info" MouseLeave="Clear_info" Height="28.1"/>
+        </Menu>
+
+        <StatusBar Margin="0,381.6,-1,0">
+            <StatusBarItem Width="794">
+                <TextBlock Name="lbl"  Width="158.4"/>
+            </StatusBarItem>
+        </StatusBar>
+
+    </Grid>
+
+</Window>

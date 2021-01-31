@@ -1,0 +1,92 @@
+﻿<Window x:Class="Trips_lab03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MultiEdit" Height="450" Width="800"
+        Background="WhiteSmoke">
+
+    <Window.Resources>
+        <Style TargetType="TextBox" x:Key="NotSelected" >
+            <Style.Setters>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="FontSize" Value="10"/>
+                <Setter Property="Width" Value="300"/>
+                <EventSetter Event="MouseEnter" Handler="TextBox_MouseEnter"/>
+            </Style.Setters>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="Selected">
+            <Style.Setters>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="Height" Value="80"/>
+                <Setter Property="Width" Value="360"/>
+                <Setter Property="FontSize" Value="20"/>
+                <EventSetter Event="MouseLeave" Handler="TextBox_MouseLeave"/>
+            </Style.Setters>
+        </Style>
+
+        <Style TargetType="Rectangle">
+            <Style.Setters>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="Stroke" Value="Black"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="Height" Value="420.4"/>
+                <Setter Property="Width" Value="400"/>
+                <Setter Property="Fill">
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Color="DarkBlue" Offset="0" />
+                                <GradientStop Color="LightBlue" Offset="0.2" />
+                                <GradientStop Color="LightBlue" Offset="0.8" />
+                                <GradientStop Color="DarkBlue" Offset="1" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+            
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Fill.GradientStops[1].Color"
+                                                          Duration="0:0:1" RepeatBehavior="Forever" AutoReverse="True">
+                                <ColorAnimationUsingKeyFrames.KeyFrames>
+                                    <LinearColorKeyFrame KeyTime="0:0:1" Value="DarkBlue"/>
+                                </ColorAnimationUsingKeyFrames.KeyFrames>
+                            </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid>
+
+        <Rectangle x:Name="Rect1"/>
+        <Rectangle x:Name="Rect2" Margin="400,0,-6.4,0"/>
+
+        <Path Data="M395.5,0 L395.5,480" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="481" Margin="400,0,0,-60.6" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="5"/>
+
+        <TextBox Style="{StaticResource NotSelected}" Margin="10,10,0,0"/>
+        <TextBox Style="{StaticResource NotSelected}" Margin="10,117.6,0,0"/>
+        <TextBox Style="{StaticResource NotSelected}" Margin="10,228,0,0"/>
+        <TextBox Style="{StaticResource NotSelected}" Margin="10,334.2,0,0"/>
+
+        <TextBox Style="{StaticResource NotSelected}" Margin="423.3,10,0,0"/>
+        <TextBox Style="{StaticResource NotSelected}" Margin="423.3,117.6,0,0"/>
+        <TextBox Style="{StaticResource NotSelected}" Margin="423.3,228,0,0"/>
+        <TextBox Style="{StaticResource NotSelected}" Margin="423.3,334.2,0,0"/>
+
+    </Grid>
+</Window>
